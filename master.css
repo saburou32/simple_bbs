@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue";
+}
+
+h2 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*ヘッダーCSS*/
+header {
+  border-bottom: 1px solid #dddddd;
+}
+
+.head-title {
+  margin: 20px;
+  display: inline-block;
+}
+
+.logout {
+  float: right;
+  margin: 20px;
+  padding: 5px;
+  color: white;
+  background-color: #75a9ff;
+  border-radius: 5px;
+  border-bottom: 3px solid #aaaaaa;
+}
+.logout:active {
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さくする*/
+  border-bottom: none;
+}
+
+/*メインCSS*/
+.main-container {
+  display: flex;
+}
+
+/*サイドバーCSS*/
+.sidebar {
+  width: 400px;
+  padding: 15px;
+}
+
+.side-contents {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+.icon {
+  border: 1px solid black;
+  vertical-align: middle;
+}
+
+.name {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.follower {
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.msg-area {
+  border: 2px solid #aaaaaa;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+/*リストCSS*/
+.main-contents {
+  border-left: 1px solid #dddddd;
+  width: 100%;
+  height: 100vh;
+}
+
+.msg-list {
+  border-bottom: 1px solid #dddddd;
+  padding: 15px;
+}
+
+.msg {
+  font-size: 14px;
+  margin: 10px;
+}
+
+footer {
+  border-top: 1px solid #dddddd;
+  height: 50px;
+}
+
+.delete {
+  text-align: right;
+  font-size: 13px;
+  margin: 15px;
+}

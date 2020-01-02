@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue";
+}
+
+h2 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*ヘッダーCSS*/
+header {
+  border-bottom: 1px solid #dddddd;
+}
+
+.head-title {
+  margin: 20px;
+  display: inline-block;
+}
+
+.login {
+  float: right;
+  margin: 20px;
+  padding: 5px;
+  color: white;
+  background-color: #75a9ff;
+  border-radius: 5px;
+  border-bottom: 3px solid #aaaaaa;
+}
+.login:active {
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さくする*/
+  border-bottom: none;
+}
+
+/*メインCSS*/
+main {
+  margin: 15px;
+}
+
+.main-contents {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  background: #D9E5FF;
+  border-radius: 5px;
+}
+
+.text {
+  margin-bottom: 15px;
+}
+
+input {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.form {
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  padding: 1px;
+  line-height: 1.2;
+}
+
+.icon-form {
+  font-size: 13px;
+}
+
+.button {
+  margin-top: 10px;
+  padding: 5px;
+  color: white;
+  background-color: #75a9ff;
+  border-radius: 5px;
+  border-bottom: 3px solid #aaaaaa;
+}
+.button:active {
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さくする*/
+  border-bottom: none;
+}
