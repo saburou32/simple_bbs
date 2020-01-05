@@ -1,7 +1,7 @@
 <?php
 try {
-  $db = new PDO(mysql:dbname=simple_bbs;host=localhost;charset=utf8,
+  $db = new PDO('mysql:dbname=simple_bbs;host=localhost;charset=utf8',
   'root', 'root');
-} catch (\Exception $e) {
+} catch (PDOException $e) {
   echo 'DB接続エラー：' . $e->getMessage();
 }

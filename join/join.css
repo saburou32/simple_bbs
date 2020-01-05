@@ -57,7 +57,7 @@ main {
 
 input {
   font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .form {
@@ -65,6 +65,12 @@ input {
   border-radius: 5px;
   padding: 1px;
   line-height: 1.2;
+}
+
+.error {
+  font-size: 10px;
+  color: red;
+  margin-bottom: 5px;
 }
 
 .icon-form {

@@ -8,7 +8,7 @@
   <body>
     <header>
       <h2 class="head-title">フォロワー</h2>
-      <a class="logout" href="">ログアウト</a>
+      <a class="logout" href="logout.php">ログアウト</a>
     </header>
 
     <div class="main-container">

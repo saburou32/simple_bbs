@@ -52,7 +52,7 @@ header {
 .side-contents {
   position: -webkit-sticky;
   position: sticky;
-  top: 0px;
+  top: 15px;
 }
 
 .icon {
@@ -79,6 +79,22 @@ header {
   line-height: 1.2;
 }
 
+.button {
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+  color: white;
+  background-color: #75a9ff;
+  border-radius: 5px;
+  border-bottom: 3px solid #aaaaaa;
+}
+.button:active {
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さくする*/
+  border-bottom: none;
+}
+
 /*リストCSS*/
 .main-contents {
   border-left: 1px solid #dddddd;
@@ -88,12 +104,16 @@ header {
 
 .msg-list {
   border-bottom: 1px solid #dddddd;
-  padding: 15px;
+  padding: 15px 15px 0 15px;
 }
 
 .msg {
   font-size: 14px;
-  margin: 10px;
+  margin: 10px 10px 5px 10px;
+}
+
+.msg-text {
+  padding-bottom: 5px;
 }
 
 footer {

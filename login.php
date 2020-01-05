@@ -1,3 +1,36 @@
+<?php
+session_start();
+require('dbconnect.php');
+require('function.php');
+
+// ログイン処理
+if(!empty($_POST)) {
+  if($_POST['email'] != '' && $_POST['pass'] != '') {
+    $login = $db->prepare('SELECT * FROM users WHERE email = ? ');
+    $login->execute(array($_POST['email']));
+    $user = $login->fetch();
+
+// 該当するアカウントのパスワードが正しければセッションにIDとログイン時間をセット
+    if(password_verify($_POST['pass'], $user['pass'])) {
+      $_SESSION['id'] = $user['id'];
+      $_SESSION['time'] = time();
+
+      header('Location: index.php');
+      exit();
+
+// emailとpassの組み合わせが一致しない場合のエラー
+    } else {
+      $error['login'] = 'failed';
+    }
+
+// アドレスかパスワードが空欄である場合のエラー
+  } else {
+    $error['login'] = 'blank';
+  }
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="jp">
   <head>
@@ -13,7 +46,7 @@
       <div class="main-contents">
         <div class="text">
           <p>メールアドレスとパスワードを記入してログインしてください。<br>
-          登録がまだの方はこちらからどうぞ。</p>
+          会員登録がまだの方はこちらからどうぞ。</p>
           <p>&raquo;<a href="join/join.php">登録手続きをする</a></p>
         </div>
         <form action="" method="post">
@@ -21,19 +54,20 @@
             <dt>メールアドレス</dt>
             <dd>
               <input class="form" type="text" name="email" size="40" maxlength="255"
-            value="">
+            value="<?php echo h($_POST['email']); ?>">
             </dd>
             <dt>パスワード</dt>
             <dd>
               <input class="form" type="text" name="pass" size="40" maxlength="20"
-              value="">
-            </dd>
-            <dt>ログイン状態の情報</dt>
-            <dd>
-              <input type="checkbox" name="save" value="on">
-              <label for="save">次回からは自動でログインする</label>
+              value="<?php echo h($_POST['pass']) ?>">
             </dd>
           </dl>
+          <?php if($error['login'] === 'blank'): ?>
+            <p class="error">メールアドレスとパスワードを記入してください</p>
+          <?php elseif($error['login'] === 'failed'): ?>
+            <p class="error">ログインに失敗しました
+              <br>メールアドレスとパスワードをもう一度ご確認ください</p>
+          <?php endif; ?>
           <div>
             <input class="button" type="submit" value="ログイン">
         </div>
