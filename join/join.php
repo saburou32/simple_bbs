@@ -1,7 +1,7 @@
 <?php
 session_start();
-require('../dbconnect.php');
-require('../function.php');
+require('../lib/dbconnect.php');
+require('../lib/function.php');
 
 
 /*エラーの検出
@@ -65,7 +65,7 @@ if($_REQUEST['action'] === 'rewrite') {
 <html lang="jp">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="../css/join.css">
     <title>会員登録 / 書き込み掲示板</title>
   </head>
   <body>

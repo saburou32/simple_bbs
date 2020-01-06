@@ -1,7 +1,7 @@
 <?php
 session_start();
-require('../dbconnect.php');
-require('../function.php');
+require('../lib/dbconnect.php');
+require('../lib/function.php');
 
 // セッションに値がセットされていない場合登録画面に返す
 if(!isset($_SESSION['join'])) {
@@ -30,7 +30,7 @@ if(!empty($_POST)) {
 <html lang="jp">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="../css/join.css">
     <title>登録内容確認 / 書き込み掲示板</title>
   </head>
   <body>
@@ -55,7 +55,7 @@ if(!empty($_POST)) {
             value="【表示されません】" readonly></dd>
           <dt>アイコン</dt>
           <dd><img src="../user_icon/<?php echo h($_SESSION['join']['icon']); ?>"
-            height="100" width="100" alt="">
+            height="50%" width="50%">
           </dd>
         </dl>
           <p class="text"><a href="join.php?action=rewrite">書き直す</a></p>

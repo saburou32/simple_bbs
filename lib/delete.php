@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('dbconnect.php');
+require('../lib/dbconnect.php');
 
 /* ログインしている場合、削除対象メッセージの投稿者IDと
   ログインしているアカウントのIDを比較して、合致すれば削除*/
@@ -17,5 +17,5 @@ if(isset($_SESSION['id'])) {
   }
 }
 
-header('Location: index.php');
+header('Location: ../public_html/index.php');
 exit();

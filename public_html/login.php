@@ -1,7 +1,7 @@
 <?php
 session_start();
-require('dbconnect.php');
-require('function.php');
+require('../lib/dbconnect.php');
+require('../lib/function.php');
 
 // ログイン処理
 if(!empty($_POST)) {
@@ -35,7 +35,7 @@ if(!empty($_POST)) {
 <html lang="jp">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="join/join.css">
+    <link rel="stylesheet" href="../css/join.css">
     <title>ログイン / 書き込み掲示板</title>
   </head>
   <body>
@@ -47,7 +47,7 @@ if(!empty($_POST)) {
         <div class="text">
           <p>メールアドレスとパスワードを記入してログインしてください。<br>
           会員登録がまだの方はこちらからどうぞ。</p>
-          <p>&raquo;<a href="join/join.php">登録手続きをする</a></p>
+          <p>&raquo;<a href="../join/join.php">登録手続きをする</a></p>
         </div>
         <form action="" method="post">
           <dl>

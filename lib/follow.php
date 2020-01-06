@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('dbconnect.php');
+require('../lib/dbconnect.php');
 
 if(isset($_SESSION['id'])) {
   $id = $_REQUEST['id'];
@@ -13,9 +13,9 @@ if(isset($_SESSION['id'])) {
     $do = $db->prepare('INSERT INTO follower SET follow_id = ?, follower_id = ?, created = NOW()');
     $do->execute(array($id, $_SESSION['id']));
   } else {
-    header('Location: index.php?follow_yet=1');
+    header('Location: ../public_html/index.php?follow_yet=1');
     exit();
   }
 }
-header('Location: index.php');
+header('Location: ../public_html/index.php');
 exit();
